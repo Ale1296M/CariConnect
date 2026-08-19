@@ -115,106 +115,53 @@ function Landing() {
   const t = COPY[lang];
 
   return (
-    <div className="min-h-dvh" lang={lang}>
-      <header className="sticky top-0 z-50 border-b border-border/60 bg-background/90 shadow-sm backdrop-blur-md">
-        <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 py-3.5 md:gap-4 md:px-8 md:py-5">
-          <Link to="/" className="flex min-w-0 items-center gap-2.5">
+    <div className="min-h-dvh bg-background" lang={lang}>
+      <div className="mx-auto flex min-h-dvh max-w-[1600px]">
+        <aside className="hidden w-64 shrink-0 border-r border-border/70 px-8 py-8 lg:flex lg:flex-col">
+          <Link to="/" className="flex items-center gap-3">
             <Logo />
-            <span className="truncate font-display text-xl tracking-tight sm:text-2xl">
-              Con Cariño PR connect
-            </span>
+            <span className="font-display text-xl font-semibold leading-none tracking-tight">Con Cariño PR</span>
           </Link>
-
-          {/* Desktop nav — brand, language, sign in, get started. Nothing else. */}
-          <nav className="hidden items-center gap-4 text-sm md:flex">
-            <LangToggle lang={lang} onChange={setLanguage} />
-            <Link
-              to="/login"
-              className="min-h-11 rounded-md px-3 py-2 font-medium text-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-            >
-              {t.signIn}
-            </Link>
-            <Button asChild className="min-h-11 rounded-full px-6">
-              <Link to="/signup">{t.getStarted}</Link>
-            </Button>
+          <span className="ml-12 mt-1 font-display text-sm italic text-muted-foreground">connect</span>
+          <p className="mt-24 px-3 text-[11px] font-semibold uppercase tracking-[0.24em] text-muted-foreground">Workspace</p>
+          <nav className="mt-5 flex flex-col gap-2">
+            {["Today", "Schedules", "Care plans", "Family updates", "Visit logs"].map((item, i) => (
+              <div key={item} className={`flex items-center gap-3 rounded-2xl px-4 py-3.5 text-sm font-semibold ${i === 0 ? "bg-primary text-primary-foreground shadow-lg shadow-primary/15" : "text-muted-foreground hover:bg-secondary hover:text-foreground"}`}>
+                <span className="grid size-8 place-items-center rounded-xl border border-current/20 text-xs">{i + 1}</span>{item}
+              </div>
+            ))}
           </nav>
-
-          {/* Mobile — primary CTA stays visible, secondary actions collapse */}
-          <div className="flex items-center gap-2 md:hidden">
-            <Button asChild size="sm" className="h-11 rounded-full px-4 text-sm">
-              <Link to="/signup">{t.getStarted}</Link>
-            </Button>
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button variant="outline" size="icon" className="h-11 w-11" aria-label={t.menu}>
-                  <Menu />
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="right" className="w-[85vw] max-w-sm">
-                <SheetHeader>
-                  <SheetTitle className="font-display text-2xl">Con Cariño PR connect</SheetTitle>
-                </SheetHeader>
-                <div className="mt-8 flex flex-col gap-4">
-                  <LangToggle lang={lang} onChange={setLanguage} />
-                  <Button asChild variant="outline" className="min-h-12 w-full">
-                    <Link to="/login">{t.signIn}</Link>
-                  </Button>
-                  <Button asChild className="min-h-12 w-full">
-                    <Link to="/signup">{t.getStarted}</Link>
-                  </Button>
-                </div>
-              </SheetContent>
-            </Sheet>
+          <div className="mt-auto flex flex-col gap-3">
+            <LangToggle lang={lang} onChange={setLanguage} />
+            <Button asChild variant="outline" className="w-full"><Link to="/login">{t.signIn}</Link></Button>
           </div>
+        </aside>
+
+        <div className="min-w-0 flex-1">
+          <header className="border-b border-border/70 bg-background/85 backdrop-blur-xl lg:hidden">
+            <div className="flex items-center justify-between gap-3 px-4 py-4">
+              <Link to="/" className="flex min-w-0 items-center gap-2.5"><Logo /><span className="truncate font-display text-xl tracking-tight">Con Cariño PR connect</span></Link>
+              <div className="flex items-center gap-2"><Button asChild size="sm"><Link to="/signup">{t.getStarted}</Link></Button><Sheet><SheetTrigger asChild><Button variant="outline" size="icon" aria-label={t.menu}><Menu /></Button></SheetTrigger><SheetContent side="right"><SheetHeader><SheetTitle className="font-display text-2xl">Con Cariño PR connect</SheetTitle></SheetHeader><div className="mt-8 flex flex-col gap-4"><LangToggle lang={lang} onChange={setLanguage} /><Button asChild variant="outline"><Link to="/login">{t.signIn}</Link></Button></div></SheetContent></Sheet></div>
+            </div>
+          </header>
+
+          <main className="px-4 pb-24 sm:px-8 lg:px-16 xl:px-24">
+            <section className="grid gap-10 py-10 md:py-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16">
+              <div className="min-w-0">
+                <p className="mb-6 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground"><span className="size-2 rounded-full bg-gold" />{t.eyebrow}</p>
+                <h1 className="max-w-xl font-display text-5xl leading-[0.95] tracking-[-0.04em] text-primary sm:text-6xl lg:text-7xl">Care works better <em className="font-normal italic text-foreground">together.</em></h1>
+                <p className="mt-8 max-w-xl text-lg leading-8 text-muted-foreground">{t.lede}</p>
+                <div className="mt-10 flex flex-wrap gap-3"><Button asChild size="lg" className="rounded-full px-7"><Link to="/signup">{t.getStarted} <span aria-hidden="true">→</span></Link></Button><Button asChild size="lg" variant="outline" className="rounded-full px-7"><Link to="/login">{t.signIn}</Link></Button></div>
+                <p className="mt-5 text-sm text-muted-foreground">A private space for your workplace and care circle.</p>
+              </div>
+              <div className="rounded-[2rem] border border-border bg-card p-4 shadow-2xl shadow-primary/10 sm:p-6"><div className="flex items-center justify-between border-b border-border pb-5"><div><p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">Connect workspace</p><h2 className="mt-2 font-display text-3xl font-semibold text-primary">A clearer view of care</h2></div><Logo /></div><div className="mt-6 rounded-[1.5rem] bg-secondary p-6"><div className="flex items-center justify-between gap-3"><p className="font-semibold text-primary">Today&apos;s coordination</p><span className="rounded-full bg-card px-3 py-1 text-xs font-semibold text-muted-foreground">Up to date</span></div><p className="mt-8 font-display text-3xl font-semibold text-primary">Everyone knows what&apos;s next.</p><div className="mt-6 h-2 rounded-full bg-card"><div className="h-full w-4/5 rounded-full bg-primary" /></div><p className="mt-3 text-sm text-muted-foreground">4 of 5 care tasks confirmed</p></div><div className="mt-4 grid gap-4 sm:grid-cols-2"><div className="rounded-2xl border border-border p-5"><p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Care team</p><p className="mt-4 font-display text-3xl font-semibold text-primary">8 members</p><div className="mt-5 flex -space-x-2"><span className="grid size-9 place-items-center rounded-full border-2 border-card bg-gold text-xs font-bold">MR</span><span className="grid size-9 place-items-center rounded-full border-2 border-card bg-attention text-xs font-bold">SM</span><span className="grid size-9 place-items-center rounded-full border-2 border-card bg-primary text-xs font-bold text-primary-foreground">+6</span></div></div><div className="rounded-2xl border border-border p-5"><p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Updates</p><p className="mt-4 font-display text-3xl font-semibold text-primary">All shared</p><p className="mt-3 text-sm text-muted-foreground">Last update 2h ago</p></div></div></div>
+            </section>
+
+            <section className="border-t border-border pt-12 md:pt-16"><div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16"><div><p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">Why connect?</p><h2 className="mt-5 max-w-md font-display text-4xl leading-tight text-primary md:text-5xl">The care around the care.</h2></div><div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">{t.features.slice(0, 3).map((f, i) => { const Icon = FEATURE_ICONS[i]!; return <div key={f.title} className="border-t-2 border-border pt-5"><Icon className="size-6 text-primary" aria-hidden="true" /><h3 className="mt-8 font-display text-2xl font-semibold text-primary">{f.title}</h3><p className="mt-4 text-base leading-7 text-muted-foreground">{f.body}</p></div>; })}</div></div></section>
+          </main>
+          <footer className="border-t border-border"><div className="flex flex-wrap items-center justify-between gap-2 px-4 py-8 text-sm text-muted-foreground sm:px-8 lg:px-16 xl:px-24"><p>© {new Date().getFullYear()} Con Cariño PR connect</p><p>{t.footer}</p></div></footer>
         </div>
-      </header>
-
-      <main className="mx-auto max-w-6xl px-4 pb-24 md:px-8">
-        <section className="grid gap-8 pt-10 md:grid-cols-[1.1fr_0.9fr] md:items-center md:gap-16 md:pt-20">
-          <div className="min-w-0">
-            <p className="mb-6 flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.18em] text-foreground/80">
-              <span className="inline-block h-1.5 w-1.5 rounded-full bg-primary" />
-              {t.eyebrow}
-            </p>
-            <h1 className="font-display text-3xl leading-tight tracking-tight text-primary sm:text-4xl md:text-5xl">
-              {t.headlineLead} <em className="italic text-foreground">{t.headlineAccent}</em>.
-            </h1>
-            <p className="mt-6 max-w-lg text-base leading-relaxed text-muted-foreground md:mt-8 md:text-lg">
-              {t.lede}
-            </p>
-          </div>
-
-          <SchedulePreview t={t} />
-        </section>
-
-        <section className="mt-16 md:mt-28">
-          <div className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 md:mx-0 md:grid md:snap-none md:grid-cols-3 md:overflow-visible md:px-0 md:pb-0 lg:grid-cols-5">
-            {t.features.map((f, i) => {
-              const Icon = FEATURE_ICONS[i]!;
-              const isWellbeing =
-                f.title === "Wellbeing tracker" || f.title === "Seguimiento de bienestar";
-              return (
-                <div
-                  key={f.title}
-                  className="flex w-[78vw] max-w-sm shrink-0 snap-center flex-col overflow-hidden rounded-2xl border border-border/60 bg-card p-5 shadow-sm md:w-auto md:max-w-none md:shrink md:snap-align-none md:p-6"
-                >
-                  <Icon className="h-5 w-5 text-primary" aria-hidden="true" />
-                  <h2 className="mt-4 type-subhead">{f.title}</h2>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.body}</p>
-                  {isWellbeing && <WellbeingTrackerPreview lang={lang} />}
-                </div>
-              );
-            })}
-          </div>
-        </section>
-      </main>
-
-      <footer className="border-t border-border">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-4 py-8 text-sm text-muted-foreground md:px-8">
-          <p>© {new Date().getFullYear()} Con Cariño PR connect</p>
-          <p>{t.footer}</p>
-        </div>
-      </footer>
+      </div>
     </div>
   );
 }
@@ -386,14 +333,10 @@ function WellbeingTrackerPreview({ lang }: { lang: Lang }) {
 
 function Logo() {
   return (
-    <span className="grid h-9 w-9 place-items-center rounded-xl bg-primary text-primary-foreground">
-      <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden="true">
-        <path
-          d="M12 20s-7-4.35-7-10a4 4 0 0 1 7-2.65A4 4 0 0 1 19 10c0 5.65-7 10-7 10Z"
-          fill="currentColor"
-          opacity=".9"
-        />
-        <circle cx="12" cy="10" r="2.2" fill="oklch(0.78 0.14 85)" />
+    <span className="grid size-12 shrink-0 place-items-center rounded-full bg-primary text-primary-foreground shadow-lg shadow-primary/15">
+      <svg viewBox="0 0 24 24" fill="none" className="size-6" aria-hidden="true">
+        <path d="M12 20.25S4.5 15.7 4.5 9.8a4.2 4.2 0 0 1 7.5-2.55A4.2 4.2 0 0 1 19.5 9.8c0 5.9-7.5 10.45-7.5 10.45Z" fill="currentColor" />
+        <path d="M8.5 10.5h.01M15.5 10.5h.01" stroke="var(--color-primary)" strokeWidth="1.8" strokeLinecap="round" />
       </svg>
     </span>
   );
