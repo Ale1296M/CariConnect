@@ -13,8 +13,8 @@ export const Route = createFileRoute("/auth")({
   component: AuthPage,
   head: () => ({
     meta: [
-      { title: "Sign in · Con Cariño PR" },
-      { name: "description", content: "Sign in or create your Con Cariño PR caregiving workspace." },
+      { title: "Sign in · Con Cariño PR connect" },
+      { name: "description", content: "Sign in or create your Con Cariño PR connect caregiving workspace." },
     ],
   }),
 });
@@ -70,7 +70,7 @@ function AuthPage() {
   return (
     <div className="grid min-h-screen md:grid-cols-2">
       <div className="hidden flex-col justify-between bg-primary p-12 text-primary-foreground md:flex">
-        <Link to="/" className="font-display text-3xl">Con Cariño PR</Link>
+        <Link to="/" className="font-display text-3xl">Con Cariño PR connect</Link>
         <div>
           <p className="max-w-md font-display text-4xl leading-tight">
             "The little notes at the end of each visit make my week."
@@ -79,12 +79,12 @@ function AuthPage() {
             — Ana, daughter & family coordinator
           </p>
         </div>
-        <p className="text-xs text-primary-foreground/60">© {new Date().getFullYear()} Con Cariño PR</p>
+        <p className="text-xs text-primary-foreground/60">© {new Date().getFullYear()} Con Cariño PR connect</p>
       </div>
 
       <div className="flex items-center justify-center p-6">
         <div className="w-full max-w-sm">
-          <Link to="/" className="mb-6 inline-block font-display text-2xl md:hidden">Con Cariño PR</Link>
+          <Link to="/" className="mb-6 inline-block font-display text-2xl md:hidden">Con Cariño PR connect</Link>
           <h1 className="type-display">
             {mode === "signup" ? "Create your account" : "Welcome back"}
           </h1>
@@ -179,7 +179,7 @@ function AuthPage() {
           </form>
 
           <p className="mt-6 text-center text-sm text-muted-foreground">
-            {mode === "signup" ? "Already have an account?" : "New to Con Cariño PR?"}{" "}
+            {mode === "signup" ? "Already have an account?" : "New to Con Cariño PR connect?"}{" "}
             <button
               onClick={() => setMode(mode === "signup" ? "signin" : "signup")}
               className="font-medium text-primary underline-offset-4 hover:underline"

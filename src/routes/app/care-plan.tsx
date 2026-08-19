@@ -12,9 +12,9 @@ export const Route = createFileRoute("/app/care-plan")({
   component: CarePlanPage,
   head: () => ({
     meta: [
-      { title: "Care plan checklists · Con Cariño PR" },
+      { title: "Care plan checklists · Con Cariño PR connect" },
       { name: "description", content: "Build and complete per-visit care checklists for each care recipient." },
-      { property: "og:title", content: "Care plan checklists · Con Cariño PR" },
+      { property: "og:title", content: "Care plan checklists · Con Cariño PR connect" },
       { property: "og:description", content: "Build and complete per-visit care checklists for each care recipient." },
     ],
   }),

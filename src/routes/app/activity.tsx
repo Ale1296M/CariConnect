@@ -13,12 +13,12 @@ export const Route = createFileRoute("/app/activity")({
   ),
   head: () => ({
     meta: [
-      { title: "Activity log · Con Cariño PR" },
+      { title: "Activity log · Con Cariño PR connect" },
       {
         name: "description",
         content: "Read-only record of who changed what across care plans, incidents, visits and contacts.",
       },
-      { property: "og:title", content: "Activity log · Con Cariño PR" },
+      { property: "og:title", content: "Activity log · Con Cariño PR connect" },
       {
         property: "og:description",
         content: "A reverse-chronological audit trail for administrators.",

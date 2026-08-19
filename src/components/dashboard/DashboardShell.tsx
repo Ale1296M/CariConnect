@@ -31,10 +31,10 @@ export function DashboardShell({
 
   return (
     <div className="min-h-dvh">
-      <header className="border-b border-border/70 bg-card/60">
+      <header className="sticky top-0 z-10 border-b border-border/70 bg-card/80 backdrop-blur-xl">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 md:px-8">
-          <Link to="/" className="font-display text-xl tracking-tight md:text-2xl">
-            Con Cariño PR
+          <Link to="/" className="font-display text-xl font-semibold tracking-tight md:text-2xl">
+            Con Cariño PR connect
           </Link>
           <nav className="hidden items-center gap-3 md:flex">{links}</nav>
           <div className="md:hidden">

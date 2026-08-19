@@ -83,7 +83,7 @@ export function SignupWizard({ startStep = 1 }: { startStep?: 1 | 2 | 3 }) {
 
   const validateStep2 = () => {
     if (!role) {
-      setErrors({ role: "Choose how you'll use Con Cariño PR." });
+      setErrors({ role: "Choose how you'll use Con Cariño PR connect." });
       return false;
     }
     setErrors({});
@@ -234,7 +234,7 @@ export function SignupWizard({ startStep = 1 }: { startStep?: 1 | 2 | 3 }) {
 
       {step === 2 && (
         <div className="space-y-5">
-          <h1 className="font-display text-3xl">How will you use Con Cariño PR?</h1>
+          <h1 className="font-display text-3xl">How will you use Con Cariño PR connect?</h1>
           <div role="radiogroup" aria-label="Role" className="grid gap-3">
             {ROLES.map((r) => {
               const Icon = r.icon;

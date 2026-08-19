@@ -8,9 +8,9 @@ export const Route = createFileRoute("/login")({
   component: LoginPage,
   head: () => ({
     meta: [
-      { title: "Sign in · Con Cariño PR" },
-      { name: "description", content: "Sign in to your Con Cariño PR caregiving workspace." },
-      { property: "og:title", content: "Sign in · Con Cariño PR" },
+      { title: "Sign in · Con Cariño PR connect" },
+      { name: "description", content: "Sign in to your Con Cariño PR connect caregiving workspace." },
+      { property: "og:title", content: "Sign in · Con Cariño PR connect" },
       { property: "og:description", content: "Access schedules, care plans and family updates." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
@@ -102,7 +102,7 @@ function LoginPage() {
   return (
     <div className="min-h-dvh">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-6 md:px-8">
-        <Link to="/" className="font-display text-2xl">Con Cariño PR</Link>
+        <Link to="/" className="font-display text-2xl">Con Cariño PR connect</Link>
         <Link to="/signup" className="text-sm font-medium text-primary underline-offset-4 hover:underline">
           Create an account
         </Link>
@@ -207,7 +207,7 @@ function LoginPage() {
           </form>
 
           <p className="mt-6 text-center text-sm text-muted-foreground">
-            New to Con Cariño PR?{" "}
+            New to Con Cariño PR connect?{" "}
             <Link to="/signup" className="font-medium text-primary underline-offset-4 hover:underline">
               Create your workspace
             </Link>

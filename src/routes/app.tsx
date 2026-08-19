@@ -9,8 +9,8 @@ export const Route = createFileRoute("/app")({
   component: AppLayout,
   head: () => ({
     meta: [
-      { title: "Workspace · Con Cariño PR" },
-      { name: "description", content: "Your Con Cariño PR caregiving workspace." },
+      { title: "Workspace · Con Cariño PR connect" },
+      { name: "description", content: "Your Con Cariño PR connect caregiving workspace." },
     ],
   }),
 });

@@ -12,9 +12,9 @@ export const Route = createFileRoute("/dashboard/caregiver")({
   component: CaregiverDashboardRoute,
   head: () => ({
     meta: [
-      { title: "Caregiver dashboard · Con Cariño PR" },
+      { title: "Caregiver dashboard · Con Cariño PR connect" },
       { name: "description", content: "Your day at a glance: timeline, clock in/out, care plan checklists." },
-      { property: "og:title", content: "Caregiver dashboard · Con Cariño PR" },
+      { property: "og:title", content: "Caregiver dashboard · Con Cariño PR connect" },
       { property: "og:description", content: "Timeline, one-tap clock in, and care plan checklists." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },

@@ -5,9 +5,9 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Con Cariño PR — caregiving coordination design system.
+ * Con Cariño PR connect — caregiving coordination design system.
  * Warm sage green + antique gold on a soft cream canvas.
- * Serif display (Newsreader) + humanist sans (Inter).
+ * Refined editorial display (Newsreader) + humanist sans (Inter).
  */
 
 @theme inline {
@@ -162,6 +162,7 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
     background-image:
       radial-gradient(circle at 15% 10%, oklch(0.78 0.14 85 / 0.08), transparent 55%),
       radial-gradient(circle at 85% 90%, oklch(0.38 0.08 155 / 0.06), transparent 55%);
@@ -169,7 +170,12 @@
 
   h1, h2, h3, .font-display {
     font-family: var(--font-display);
-    letter-spacing: -0.01em;
+    letter-spacing: -0.025em;
+  }
+
+  :where(button, a, input, textarea, select):focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 3px;
   }
 }
 

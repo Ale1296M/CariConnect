@@ -27,13 +27,13 @@ export const Route = createFileRoute("/app/wellbeing")({
   ),
   head: () => ({
     meta: [
-      { title: "Wellbeing Trends · Con Cariño PR" },
+      { title: "Wellbeing Trends · Con Cariño PR connect" },
       {
         name: "description",
         content:
           "Descriptive 14-day mood, appetite, medicine, movement and hygiene patterns recorded during care visits.",
       },
-      { property: "og:title", content: "Wellbeing Trends · Con Cariño PR" },
+      { property: "og:title", content: "Wellbeing Trends · Con Cariño PR connect" },
       {
         property: "og:description",
         content: "A descriptive 14-day picture of recorded wellbeing check-ins.",

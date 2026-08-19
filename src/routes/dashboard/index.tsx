@@ -6,9 +6,9 @@ export const Route = createFileRoute("/dashboard/")({
   component: DashboardIndex,
   head: () => ({
     meta: [
-      { title: "Dashboard · Con Cariño PR" },
+      { title: "Dashboard · Con Cariño PR connect" },
       { name: "description", content: "Taking you to the dashboard for your role." },
-      { property: "og:title", content: "Dashboard · Con Cariño PR" },
+      { property: "og:title", content: "Dashboard · Con Cariño PR connect" },
       { property: "og:description", content: "Role-based caregiving dashboards for teams and families." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },

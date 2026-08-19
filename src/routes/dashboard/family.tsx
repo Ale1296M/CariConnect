@@ -11,9 +11,9 @@ export const Route = createFileRoute("/dashboard/family")({
   component: FamilyDashboardRoute,
   head: () => ({
     meta: [
-      { title: "Family dashboard · Con Cariño PR" },
+      { title: "Family dashboard · Con Cariño PR connect" },
       { name: "description", content: "Updates from your loved one's caregivers, daily summaries and the week ahead." },
-      { property: "og:title", content: "Family dashboard · Con Cariño PR" },
+      { property: "og:title", content: "Family dashboard · Con Cariño PR connect" },
       { property: "og:description", content: "Daily care summaries, caregiver messages and upcoming visits." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },

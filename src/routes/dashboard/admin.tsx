@@ -21,9 +21,9 @@ export const Route = createFileRoute("/dashboard/admin")({
   component: AdminDashboardRoute,
   head: () => ({
     meta: [
-      { title: "Admin dashboard · Con Cariño PR" },
+      { title: "Admin dashboard · Con Cariño PR connect" },
       { name: "description", content: "Shift matrix, roster management, live visits and audit history." },
-      { property: "og:title", content: "Admin dashboard · Con Cariño PR" },
+      { property: "og:title", content: "Admin dashboard · Con Cariño PR connect" },
       { property: "og:description", content: "Coverage, roster, live visit tracking and audit log." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },

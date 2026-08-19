@@ -16,12 +16,12 @@ export const Route = createFileRoute("/app/deleted")({
   ),
   head: () => ({
     meta: [
-      { title: "Recently deleted · Con Cariño PR" },
+      { title: "Recently deleted · Con Cariño PR connect" },
       {
         name: "description",
         content: "Restore removed emergency contacts, checklist items, visits and incident reports.",
       },
-      { property: "og:title", content: "Recently deleted · Con Cariño PR" },
+      { property: "og:title", content: "Recently deleted · Con Cariño PR connect" },
       {
         property: "og:description",
         content: "Nothing is erased — admins can bring removed records back.",

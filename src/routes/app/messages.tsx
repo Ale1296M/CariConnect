@@ -11,10 +11,10 @@ export const Route = createFileRoute("/app/messages")({
   component: MessagesPage,
   head: () => ({
     meta: [
-      { title: "Family chat · Con Cariño PR" },
-      { name: "description", content: "Live chat between a family, their caregivers, and the Con Cariño PR care team." },
-      { property: "og:title", content: "Family chat · Con Cariño PR" },
-      { property: "og:description", content: "Live chat between a family, their caregivers, and the Con Cariño PR care team." },
+      { title: "Family chat · Con Cariño PR connect" },
+      { name: "description", content: "Live chat between a family, their caregivers, and the Con Cariño PR connect care team." },
+      { property: "og:title", content: "Family chat · Con Cariño PR connect" },
+      { property: "og:description", content: "Live chat between a family, their caregivers, and the Con Cariño PR connect care team." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],
@@ -218,9 +218,9 @@ function MessagesPage() {
 
   const heading = isCaregiver ? "Care team chat" : isFamily ? "Your care team" : "Messages";
   const subheading = isCaregiver
-    ? "A private thread between you and the Con Cariño PR care team."
+    ? "A private thread between you and the Con Cariño PR connect care team."
     : isFamily
-      ? "A private thread between your family and the Con Cariño PR care team."
+      ? "A private thread between your family and the Con Cariño PR connect care team."
       : "Private threads with families and with caregivers.";
 
   return (

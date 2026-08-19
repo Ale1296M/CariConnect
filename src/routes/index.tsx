@@ -16,13 +16,13 @@ export const Route = createFileRoute("/")({
   component: Landing,
   head: () => ({
     meta: [
-      { title: "Con Cariño PR — caregiving coordination for teams and families" },
+      { title: "Con Cariño PR connect — caregiving coordination for teams and families" },
       {
         name: "description",
         content:
           "One calm workspace for caregivers, care recipients and families in Puerto Rico. Schedules, care plans, visit logs and messages — thoughtfully connected.",
       },
-      { property: "og:title", content: "Con Cariño PR — caregiving coordination" },
+      { property: "og:title", content: "Con Cariño PR connect — caregiving coordination" },
       {
         property: "og:description",
         content:
@@ -45,7 +45,7 @@ const COPY = {
     headlineLead: "Care that stays",
     headlineAccent: "connected",
     lede:
-      "Con Cariño PR gives home care teams and the families they serve one warm place to plan visits, share updates, and remember every small thing that matters.",
+      "Con Cariño PR connect gives home care teams and the families they serve one warm place to plan visits, share updates, and remember every small thing that matters.",
     today: "Today · Tuesday",
     visits: "3 visits",
     verified: "Location verified",
@@ -73,7 +73,7 @@ const COPY = {
     headlineLead: "Cuidado que permanece",
     headlineAccent: "conectado",
     lede:
-      "Con Cariño PR ofrece a los equipos de cuidado en el hogar y a las familias un espacio cálido para planificar visitas, compartir novedades y recordar cada pequeño detalle que importa.",
+      "Con Cariño PR connect ofrece a los equipos de cuidado en el hogar y a las familias un espacio cálido para planificar visitas, compartir novedades y recordar cada pequeño detalle que importa.",
     today: "Hoy · martes",
     visits: "3 visitas",
     verified: "Ubicación verificada",
@@ -121,7 +121,7 @@ function Landing() {
           <Link to="/" className="flex min-w-0 items-center gap-2.5">
             <Logo />
             <span className="truncate font-display text-xl tracking-tight sm:text-2xl">
-              Con Cariño PR
+              Con Cariño PR connect
             </span>
           </Link>
 
@@ -152,7 +152,7 @@ function Landing() {
               </SheetTrigger>
               <SheetContent side="right" className="w-[85vw] max-w-sm">
                 <SheetHeader>
-                  <SheetTitle className="font-display text-2xl">Con Cariño PR</SheetTitle>
+                  <SheetTitle className="font-display text-2xl">Con Cariño PR connect</SheetTitle>
                 </SheetHeader>
                 <div className="mt-8 flex flex-col gap-4">
                   <LangToggle lang={lang} onChange={setLanguage} />
@@ -211,7 +211,7 @@ function Landing() {
 
       <footer className="border-t border-border">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-4 py-8 text-sm text-muted-foreground md:px-8">
-          <p>© {new Date().getFullYear()} Con Cariño PR</p>
+          <p>© {new Date().getFullYear()} Con Cariño PR connect</p>
           <p>{t.footer}</p>
         </div>
       </footer>
