@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { HeartHandshake, ShieldCheck, Users, ArrowRight } from "lucide-react";
+import { ArrowRight, Heart, Lock, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/connect")({
@@ -10,12 +10,12 @@ export const Route = createFileRoute("/connect")({
       {
         name: "description",
         content:
-          "The single doorway into the Con Cariño PR workspace. Admins, caregivers and family members sign in here.",
+          "Con Cariño PR Connect brings your workplace and care community into one calm, secure place to coordinate, communicate, and keep each other close.",
       },
       { property: "og:title", content: "Con Cariño PR Connect" },
       {
         property: "og:description",
-        content: "One doorway into the Con Cariño PR caregiving workspace.",
+        content: "One calm, secure doorway into your Con Cariño PR care workspace.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
@@ -23,97 +23,173 @@ export const Route = createFileRoute("/connect")({
   }),
 });
 
-const DOORS = [
-  {
-    role: "Admin",
-    icon: ShieldCheck,
-    body: "Manage your agency's team, clients and care coverage.",
-  },
-  {
-    role: "Caregiver",
-    icon: HeartHandshake,
-    body: "See your shifts, log visits and update care plans.",
-  },
-  {
-    role: "Family member",
-    icon: Users,
-    body: "Follow visit notes, wellbeing check-ins and messages.",
-  },
-] as const;
-
 function ConnectPage() {
   return (
     <div className="flex min-h-dvh flex-col">
-      <header className="border-b border-border/60">
-        <div className="mx-auto flex max-w-4xl items-center justify-between px-4 py-6 md:px-8">
-          <Link to="/" className="flex items-center gap-2.5">
+      <header className="border-b border-border/60 bg-background/90 backdrop-blur-md">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-4 md:px-8 md:py-5">
+          <Link to="/" className="flex min-w-0 items-center gap-2.5">
             <Logo />
-            <span className="font-display text-lg tracking-tight text-muted-foreground sm:text-xl">
-              Con Cariño PR <span className="text-foreground">Connect</span>
+            <span className="min-w-0 leading-tight">
+              <span className="block truncate font-display text-lg tracking-tight sm:text-xl">
+                Con Cariño
+              </span>
+              <span className="block text-xs italic tracking-wide text-muted-foreground">
+                connect
+              </span>
             </span>
           </Link>
-          <Link
-            to="/"
-            className="min-h-11 rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-          >
-            Back to site
-          </Link>
+          <div className="flex items-center gap-2">
+            <Button asChild variant="ghost" className="min-h-11 rounded-full px-4">
+              <Link to="/">Back to site</Link>
+            </Button>
+            <Button asChild className="min-h-11 rounded-full px-5">
+              <Link to="/signup">Get started</Link>
+            </Button>
+          </div>
         </div>
       </header>
 
       <main className="flex flex-1 items-center">
-        <div className="mx-auto w-full max-w-4xl px-4 py-16 md:px-8 md:py-20">
-          <p className="mb-4 flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.18em] text-foreground/80">
-            <span className="inline-block h-1.5 w-1.5 rounded-full bg-primary" />
-            Workspace access
-          </p>
-          <h1 className="font-display text-3xl leading-tight tracking-tight sm:text-4xl md:text-5xl">
-            One door <em className="italic text-primary">in</em>.
-          </h1>
-          <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
-            Connect is the single, secure entrance to your Con Cariño PR workspace. Sign in below
-            — we'll take you straight to the tools built for your role.
-          </p>
+        <div className="mx-auto grid w-full max-w-6xl items-center gap-12 px-4 py-14 md:grid-cols-[1.05fr_0.95fr] md:gap-16 md:px-8 md:py-20">
+          {/* Left — message + actions */}
+          <div className="min-w-0">
+            <p className="mb-6 flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.18em] text-foreground/80">
+              <span className="inline-block h-1.5 w-1.5 rounded-full bg-attention" />
+              A better way to stay connected
+            </p>
+            <h1 className="font-display text-5xl leading-[0.98] tracking-tight text-primary sm:text-6xl md:text-7xl">
+              Care works better{" "}
+              <em className="italic text-foreground">together.</em>
+            </h1>
+            <p className="mt-7 max-w-md text-lg leading-relaxed text-muted-foreground">
+              Con Cariño PR connect brings your workplace and care community into one calm, secure
+              place to coordinate, communicate, and keep each other close.
+            </p>
 
-          <div className="mt-12 grid gap-4 md:grid-cols-3">
-            {DOORS.map(({ role, icon: Icon, body }) => (
-              <div
-                key={role}
-                className="flex flex-col rounded-2xl border border-border/60 bg-card p-6 shadow-sm"
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <Button asChild className="min-h-13 rounded-full px-7 text-base">
+                <Link to="/signup">
+                  Create your account
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </Link>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                className="min-h-13 rounded-full bg-card px-7 text-base"
               >
-                <span className="grid h-11 w-11 place-items-center rounded-xl bg-secondary text-primary">
-                  <Icon className="h-5 w-5" aria-hidden="true" />
-                </span>
-                <h2 className="mt-4 type-subhead">{role}</h2>
-                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{body}</p>
-                <Button asChild variant="outline" className="mt-5 min-h-11 w-full rounded-full">
-                  <Link to="/login">
-                    Sign in
-                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                  </Link>
-                </Button>
-              </div>
-            ))}
+                <Link to="/login">
+                  <Lock className="h-4 w-4" aria-hidden="true" />
+                  Sign in to your workplace
+                </Link>
+              </Button>
+            </div>
+
+            <p className="mt-6 max-w-md text-sm leading-relaxed text-muted-foreground">
+              Already connected through Con Cariño PR? Your workplace may already be waiting for you.
+            </p>
           </div>
 
-          <div className="mt-10 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted-foreground">
-            <span>New to Con Cariño PR?</span>
-            <Link to="/signup" className="font-medium text-primary underline-offset-4 hover:underline">
-              Create your workspace
-            </Link>
-            <span aria-hidden="true">·</span>
-            <span>Not yet assigned a role? Your agency admin sets that up after sign in.</span>
-          </div>
+          {/* Right — workspace preview */}
+          <WorkspacePreview />
         </div>
       </main>
 
       <footer className="border-t border-border">
-        <div className="mx-auto flex max-w-4xl flex-wrap items-center justify-between gap-2 px-4 py-6 text-sm text-muted-foreground md:px-8">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-4 py-6 text-sm text-muted-foreground md:px-8">
           <p>© {new Date().getFullYear()} Con Cariño PR</p>
           <p>Connect · workspace access only</p>
         </div>
       </footer>
     </div>
+  );
+}
+
+function WorkspacePreview() {
+  return (
+    <div className="w-full rounded-3xl border border-border/70 bg-card p-6 shadow-[0_20px_60px_-30px_oklch(0.24_0.035_155_/_0.35)] md:p-8">
+      <div className="flex items-start justify-between gap-4">
+        <div className="min-w-0">
+          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+            Connect workspace
+          </p>
+          <h2 className="mt-2 font-display text-2xl leading-tight tracking-tight sm:text-3xl">
+            A clearer view of care
+          </h2>
+        </div>
+        <span
+          className="grid size-10 shrink-0 place-items-center rounded-full bg-secondary text-primary"
+          aria-hidden="true"
+        >
+          <Heart className="h-5 w-5 fill-current" />
+        </span>
+      </div>
+
+      <div className="mt-5 border-t border-border/70" />
+
+      {/* Today's coordination */}
+      <div className="mt-5 rounded-2xl bg-secondary/70 p-5">
+        <div className="flex items-center justify-between gap-3">
+          <p className="font-medium text-secondary-foreground">Today&apos;s coordination</p>
+          <span className="rounded-full bg-card px-3 py-1 text-xs font-medium text-muted-foreground">
+            Up to date
+          </span>
+        </div>
+        <p className="mt-2 font-display text-2xl leading-tight tracking-tight sm:text-3xl">
+          Everyone knows what&apos;s next.
+        </p>
+        <div
+          className="mt-4 h-2 w-full overflow-hidden rounded-full bg-card"
+          role="progressbar"
+          aria-valuenow={4}
+          aria-valuemin={0}
+          aria-valuemax={5}
+          aria-label="4 of 5 care tasks confirmed"
+        >
+          <span className="block h-full w-4/5 rounded-full bg-primary" />
+        </div>
+        <p className="mt-2 text-xs text-muted-foreground">4 of 5 care tasks confirmed</p>
+      </div>
+
+      {/* Two sub-cards */}
+      <div className="mt-4 grid gap-4 sm:grid-cols-2">
+        <div className="rounded-2xl border border-border/60 p-5">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+            Care team
+          </p>
+          <p className="mt-2 font-display text-xl tracking-tight">8 members</p>
+          <div className="mt-3 flex items-center">
+            <Avatar className="bg-gold text-gold-foreground" initials="MR" />
+            <Avatar className="-ml-2 bg-attention text-primary-foreground" initials="SM" />
+            <Avatar className="-ml-2 bg-primary text-primary-foreground text-[11px]" initials="+6" />
+          </div>
+        </div>
+        <div className="rounded-2xl border border-border/60 p-5">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+            Updates
+          </p>
+          <p className="mt-2 font-display text-xl tracking-tight">All shared</p>
+          <p className="mt-3 text-sm text-muted-foreground">Last update 2h ago</p>
+        </div>
+      </div>
+
+      <p className="mt-5 flex items-center gap-2 text-sm font-medium text-foreground/80">
+        <ShieldCheck className="h-4 w-4 text-primary" aria-hidden="true" />
+        A private space for your workplace
+      </p>
+    </div>
+  );
+}
+
+function Avatar({ initials, className = "" }: { initials: string; className?: string }) {
+  return (
+    <span
+      className={`grid size-9 place-items-center rounded-full border-2 border-card text-xs font-semibold ${className}`}
+      aria-hidden="true"
+    >
+      {initials}
+    </span>
   );
 }
 
